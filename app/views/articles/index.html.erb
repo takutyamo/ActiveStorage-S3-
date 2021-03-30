@@ -1,0 +1,23 @@
+<h1>Listing articles</h1>
+<%= link_to 'New article', new_article_path %>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th></th>
+  </tr>
+
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.title %></td>
+      <td><%= article.text %></td>
+      <td><%= link_to 'Show', article_path(article) %></td>
+      <td><%= link_to 'Edit', edit_article_path(article) %></td>
+      <td><%= link_to 'Destroy', article_path(article),
+              method: :delete, data: { confirm: 'Are you sure?' } %>
+    <!--このmethod: :deleteオプションとdata: { confirm: 'Are you sure?' }オプションはHTML5の属性です。
+        このリンクをクリックすると、本当に削除してよいかどうかを確認するメッセージを表示し、
+        その後deleteメソッドとリンクを送信します。-->
+    </tr>
+  <% end %>
+</table>

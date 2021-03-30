@@ -1,0 +1,22 @@
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @article.text %>
+</p>
+
+<h2>Comments</h2>
+<!-- ☆注意☆ modelがcommenterじゃなくてcommneterになってるよ。-->
+<!--renderメソッドが@article.commentsコレクションに含まれる要素を1つ1つ列挙するときに、
+  各コメントをパーシャルと同じ名前のローカル変数に自動的に割り当てます。
+  この場合はcommentというローカル変数が使われ、パーシャルの表示に利用されます-->
+<%= render @article.coments %>
+
+<h2>Add a comment:</h2>
+<%= render "coments/form"%>
+
+<%= link_to 'Edit Article', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>

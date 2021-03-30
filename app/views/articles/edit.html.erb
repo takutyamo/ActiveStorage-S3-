@@ -1,0 +1,12 @@
+<h1>Edit article</h1>
+
+<!-- form_with(model: @article, local: true) do |form| -->
+<!--articleオブジェクトをform_withメソッドに渡すと、編集済みの記事を送信するときに使うURLが魔法のように自動作成されます。
+    Railsはmodelオプションに渡された値を読み取り、(今回の場合は) PATCHというHTTPメソッドでこのフォームを送信しようとします。
+    PATCHメソッドは、RESTプロトコルに基いてリソースを更新する場合に使います。-->
+<!--form_withメソッドの引数にはモデルオブジェクトを（model: @articleなどのような形で）渡せます。
+    このときヘルパーはarticleオブジェクトに含まれているフィールドでフォームの項目を埋めます。
+    scope: :articleのようにスコープにシンボルを指定すると、フィールドが空の状態で作成されます-->
+<%= render 'form' %>
+
+<%= link_to 'Back', articles_path %>

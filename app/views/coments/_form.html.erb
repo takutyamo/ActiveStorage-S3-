@@ -1,0 +1,15 @@
+<%= form_with(model: [ @article, @article.coments.build ], local: true) do |form| %>
+<!--form_with呼び出しでは配列を1つ渡しています。
+  これは/articles/1/comentsのような「ネストしたルーティング (nested route)」を生成します。-->
+  <p>
+    <%= form.label :commneter %><br>
+    <%= form.text_field :commneter %>
+  </p>
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

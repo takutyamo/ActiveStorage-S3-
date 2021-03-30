@@ -1,0 +1,22 @@
+<%= form_with model: @user ,local: true do |form| %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :age %><br>
+    <%= form.text_field :age %>
+  </p>
+
+  <p>
+    <%= form.label :avatar %><br>
+    <%= form.file_field :avatar %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
